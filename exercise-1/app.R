@@ -5,9 +5,14 @@ library(shiny)
 
 # Define a new `ui` variable. This variable should be assigned a `fluidPage()` 
 # layout, which should be passed the following:
-
-
-  # A top level header: "First Shiny Website"
+ui <- fluidPage(
+  h1("First Shiny Website"),
+  p("This is a", strong("paragraph")),
+  img("", src = "https://media2.giphy.com/media/l3q2Ip7FrmPE33EiI/giphy.gif"),
+  p("let me", em("emphasize"), "this"),
+  sliderInput("slider", "My First Slider", min = 0, max = 100, value = 50, step = 10)
+)
+    # A top level header: "First Shiny Website"
   
 
   # A Paragraph, describing your excitement: include some `strong` text
@@ -27,7 +32,8 @@ library(shiny)
 # Define a `server` function that accepts an input and an output
 # At this point, don't do anything in the function
 # This function should perform the following:
-
+server <- function(input, output){}
 
 
 # Create a new `shinyApp()` using the above ui and server
+shinyApp(ui=ui, server = server)
